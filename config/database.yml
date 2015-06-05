@@ -81,5 +81,22 @@ test:
 production:
   <<: *default
   database: bucketList_production
-  username: bucketList
+  username: bucketlist
   password: <%= ENV['BUCKETLIST_DATABASE_PASSWORD'] %>
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bucketList_development
+  pool: 5
+  username: bucketlist
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bucketList_test
+  pool: 5
+  username: bucketlist
+  password:
+
