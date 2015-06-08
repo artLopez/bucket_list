@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="480b1ebd-7abc-4014-ab57-9a697626ffb1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/login_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/login/login.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/controllers/login_controller_test.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20150605213339_create_users.rb" afterPath="$PROJECT_DIR$/db/migrate/20150605213339_create_users.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bucketList.iws" />
