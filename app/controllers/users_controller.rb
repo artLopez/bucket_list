@@ -6,9 +6,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
 
-    redirect_to :back
+    redirect_to login_path
   end
-
 
   private
   def user_params
