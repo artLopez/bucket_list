@@ -1,3 +1,4 @@
+<%= render 'layouts/header' %>
 <% provide(:title, 'New Account') %>
 <h1 style = "text-align: center">Sign up</h1>
 <div class="row">
@@ -5,12 +6,12 @@
     <%= form_for :users, url: users_path do |f| %>
         <p>
           <%= f.label :firstName %>
-          <%= f.text_field :firstName  %>
+          <%= f.text_field :first_name  %>
         </p>
 
         <p>
           <%= f.label :lastName %>
-          <%= f.text_field :lastName %>
+          <%= f.text_field :last_name %>
         </p>
 
         <p>
