@@ -1,17 +1,2 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Date</th>
-    <th>Description</th>
-  </tr>
-
-  <% @event.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.location %></td>
-        <td><%= event.date %></td>
-        <td><%= event.description %></td>
-      </tr>
-  <% end %>
-</table>
+<%= render 'layouts/header' %>
+<%= render 'events/events' %>
