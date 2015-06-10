@@ -1,27 +1,44 @@
-<table align="center">
-  <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Display</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
+<% if @current_user != nil &&  @event.count != 0 && session[:user_id] == @event[0][:user_id]%>
+    <h1>Welcome to your Profile <%= session[:name] %>!</h1>
+ <% else %>
+    <h1>Hello <%= @user_name %></h1>
+<% end %>
 
-  <% @event.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.location %></td>
-        <td><%= event.date %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Display', event_path(event) %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event_path(event),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% if @event.count == 0 %>
+    <h1>No events set</h1>
+<% else %>
+    <table align="center">
+        <tr>
+          <th>Title</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Description</th>
+
+        <% if session[:user_id] == @event[0][:user_id] %>
+
+            <th>Display</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        <% end %>
+        </tr>
+
+      <% @event.each do |event| %>
+          <tr>
+            <td><%= event.title %></td>
+            <td><%= event.location %></td>
+            <td><%= event.date %></td>
+            <td><%= event.description %></td>
+
+            <% if session[:user_id] == event.user_id %>
+                <td><%= link_to 'Display', event_path(event) %></td>
+                <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                <td><%= link_to 'Destroy', event_path(event),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+      <% end %>
+
   <% end %>
+
 </table>
-
-

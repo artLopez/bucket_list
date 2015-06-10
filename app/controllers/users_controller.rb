@@ -13,7 +13,12 @@ class UsersController < ApplicationController
     redirect_to login_path
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
+    @event = Event.where('user_id = ?',params[:id])
   end
 
   private

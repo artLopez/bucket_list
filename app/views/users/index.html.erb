@@ -1,0 +1,22 @@
+<%= render 'layouts/header' %>
+<h1>Users</h1>
+
+<table align="center">
+  <tr><td>User ID </td>
+    <td>Name</td>
+    <td>Profile</td>
+  </tr>
+
+  <% @users.each do |user| %>
+      <% if @current_user == nil || session[:user_id] != user.id %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.first_name << ' ' << user.last_name %></td>
+            <td><%= link_to 'View Profile', user_path(user) %></td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>
+
+
+

@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.where('user_id = ?', session[:user_id])
+    @user_name = User.where('id = ?',3)
   end
 
 
@@ -39,4 +40,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :location, :date, :description, :user_id)
   end
+
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'landing_page#index'
 
   get 'profile' => 'users#profile'
+  get 'users' => 'users#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
