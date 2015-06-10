@@ -5,6 +5,11 @@ class EventsController < ApplicationController
     redirect_to @event
   end
 
+  def profile
+    @user = User.find_by(id: session[:user_id])
+    @event = @user.events
+  end
+
   def show
     @event = Event.find(params[:id])
   end
@@ -14,10 +19,9 @@ class EventsController < ApplicationController
   end
 
   def index
-    @event = Event.where('user_id = ?', session[:user_id])
-    @user_name = User.where('id = ?',3)
+    @user = User.find_by(id: session[:user_id])
+    @event = @user.events
   end
-
 
   def update
     @event = Event.find(params[:id])
@@ -40,5 +44,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :location, :date, :description, :user_id)
   end
-
 end

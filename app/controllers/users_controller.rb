@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @event = Event.where('user_id = ?', session[:user_id])
+    @event = Event.where('user_id = ?',params[:id])
+    @user_name = User.where('id = ?',params[:id])
   end
 
   def create
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @event = Event.where('user_id = ?',params[:id])
+    @user_name = User.where('id = ?',params[:id])
   end
 
   private

@@ -1,7 +1,7 @@
-<% if @current_user != nil &&  @event.count != 0 && session[:user_id] == @event[0][:user_id]%>
+<% if @current_user != nil && session[:user_id] == @user_name[:id] %>
     <h1>Welcome to your Profile <%= session[:name] %>!</h1>
  <% else %>
-    <h1>Hello <%= @user_name %></h1>
+    <h1>Profile <%= @user_name[0][:first_name] << ' ' << @user_name[0][:last_name] %></h1>
 <% end %>
 
 <% if @event.count == 0 %>
@@ -15,7 +15,6 @@
           <th>Description</th>
 
         <% if session[:user_id] == @event[0][:user_id] %>
-
             <th>Display</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -38,7 +37,10 @@
             <% end %>
           </tr>
       <% end %>
-
+    </table>
   <% end %>
 
-</table>
+
+
+
+<%= link_to 'Back', users_path %>

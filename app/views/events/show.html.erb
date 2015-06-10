@@ -1,22 +1,25 @@
 <%= render 'layouts/header' %>
-<p>
-    <strong>Title:</strong>
-    <%= @event.title %>
+
+<p style = "padding-top: 50px">
+  <strong>Title:</strong>
+  <%= @event.title %>
 </p>
 
 <p>
-    <strong>Location:</strong>
-    <%= @event.location %>
+  <strong>Location:</strong>
+  <%= @event.location %>
 </p>
+
 
 <p>
-    <strong>Date:</strong>
-    <%= @event.date %>
+  <strong>Date:</strong>
+  <%= @event.date %>
 </p>
+
 
 <p>
-    <strong>Description:</strong>
-    <%= @event.description %>
+  <strong>Description:</strong>
+  <%= @event.description %>
 </p>
 
-<%= link_to 'Back', profile_path %>
+<%= link_to 'Back', users_path %>
