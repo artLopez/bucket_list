@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
 
-    redirect_to profile_path
+    redirect_to user_path(session[:user_id])
   end
 
   private

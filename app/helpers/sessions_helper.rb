@@ -4,7 +4,6 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
     session[:name] = user.first_name << ' '  << user.last_name
-
   end
 
   def current_user

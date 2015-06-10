@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -8,7 +7,7 @@ class SessionsController < ApplicationController
     if user && (user[:password] === params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user
-      redirect_to profile_path
+      redirect_to user_path(session[:user_id])
     else
       # Create an error message.
       render 'sessions/new'

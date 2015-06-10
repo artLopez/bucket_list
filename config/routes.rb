@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landing_page#index'
 
-  get 'profile' => 'events#profile'
+  get 'profile' => 'users#show'
   get 'users' => 'users#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

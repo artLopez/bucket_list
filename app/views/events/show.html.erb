@@ -16,10 +16,9 @@
   <%= @event.date %>
 </p>
 
-
 <p>
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', user_path(session[:user_id]) %>
