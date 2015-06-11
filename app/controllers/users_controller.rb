@@ -26,7 +26,6 @@ class UsersController < ApplicationController
 
   def displayUserEvents
    @event = Event.where('user_id = ?',params[:id])
-   @user_name = User.where('id = ?',params[:id])
-   @user_count = User.all
+   @user= User.where('id = ?',params[:id])
   end
 end

@@ -4,13 +4,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-
-    if @event.save
-      redirect_to @event
+    if current_user.events.create(event_params)
+      redirect_to user_path(current_user)
     else
       render 'events/new'
     end
+
   end
 
   def profile
@@ -45,7 +44,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
 
-    redirect_to user_path(session[:user_id])
+    redirect_to user_path(current_user)
   end
 
   private
