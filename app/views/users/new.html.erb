@@ -3,6 +3,21 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-5">
     <%= form_for :users, url: users_path do |f| %>
+
+        <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h3>
+                <%= pluralize(@user.errors.count, "error") %>
+                preventing create account:
+              </h3>
+              <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                    <li><b><%= msg %></b></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
         <p>
           <%= f.label :firstName %>
           <%= f.text_field :first_name  %>

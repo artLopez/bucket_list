@@ -12,17 +12,22 @@
           <tr>
             <td><%= user.id %></td>
             <td><%= user.first_name << ' ' << user.last_name %></td>
-            <td><%= link_to 'View Profile', user_path(user) %></td>
+            <td><%= link_to 'View Profile', user_path(user), :class => 'btn btn-large btn-primary' %></td>
           </tr>
       <% end %>
   <% end %>
+
 </table>
 
+
+<div >
 <% if @current_user == nil %>
-    <%= link_to 'Back', root_path%>
+    <%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
 <% else %>
-    <%= link_to 'Back', user_path(session[:user_id])%>
+    <%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
 <% end %>
+
+</div>
 
 
 

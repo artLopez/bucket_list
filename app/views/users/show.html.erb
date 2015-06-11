@@ -14,7 +14,7 @@
 <% end %>
 
 <% if @current_user == nil && @user_name.count != 0 %>
-    <%= link_to 'Back', users_path%>
-    <% elsif @current_user != nil %>
-     <%= link_to 'Back', users_path%>
+    <%= link_to 'Back', users_path, :class => 'btn btn-large btn-primary'%>
+    <% elsif @current_user != nil && session[:user_id] != @user_name[0][:id] %>
+     <%= link_to 'Back', users_path, :class => 'btn btn-large btn-primary'%>
 <% end %>

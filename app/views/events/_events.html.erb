@@ -20,11 +20,12 @@
             <td><%= event.description %></td>
 
             <% if session[:user_id] == event.user_id %>
-                <td><%= link_to 'Display', event_path(event) %></td>
-                <td><%= link_to 'Edit', edit_event_path(event) %></td>
-                <td><%= link_to 'Destroy', event_path(event),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %></td>
+
+                <td><%= link_to('Display', event_path(event), :class => 'btn btn-large btn-primary')  %></td>
+                <td><%= link_to('Edit',  edit_event_path(event), :class => 'btn btn-large btn-primary')  %></td>
+                <td><%= link_to('Destroy', event_path(event), method: :delete,
+                                data: { confirm: 'Are you sure?' } , :class => 'btn btn-large btn-primary')  %></td>
+
             <% end %>
           </tr>
       <% end %>
