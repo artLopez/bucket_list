@@ -12,11 +12,6 @@ class EventsController < ApplicationController
 
   end
 
-  def profile
-    @user = User.find_by(id: session[:user_id])
-    @event = @user.events
-  end
-
   def show
     @event = Event.find(params[:id])
   end
@@ -26,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @user = User.find_by(id: session[:user_id])
+    @user = User.find_by(id: current_user)
     @event = @user.events
   end
 
