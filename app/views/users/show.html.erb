@@ -1,7 +1,6 @@
 <%= render 'layouts/header' %>
-<% if @user.count == 0 %>
-    <h1>Member Does Note Exist</h1>
-<% elsif @user != nil && session[:user_id] == @user[0][:id] %>
+
+<% if @user != nil && session[:user_id] == @user[0][:id] %>
     <h1 style = "padding-top: 50px">Welcome to your Profile <%= session[:name] %>!</h1>
 <% else %>
     <h1>Profile <%= @user[0][:first_name] << ' ' << @user[0][:last_name] %></h1>

@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+
+  unless Rails.env.test?
+    get '404', :to => 'application#page_not_found'
+    get '422', :to => 'application#server_error'
+    get '500', :to => 'application#server_error'
+  end
+
 end
