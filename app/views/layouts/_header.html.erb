@@ -1,27 +1,40 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Members", users_path %></li>
-        <% if logged_in? %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
-                <li><%= link_to "Create Event", new_event_path%></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Log out", logout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-        <% else %>
-            <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <!-- for the scroll-->
+      <a class="navbar-brand page-scroll" href="#page-top"></a>
+      <%= link_to "The Ultimate Bucket List", root_path, :class => 'navbar-brand page-scroll' %>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+          <a class="page-scroll" href="#page-top"></a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#about">About</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#services">Features</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Contact</a>
+        </li>
       </ul>
-    </nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li><%= link_to "Log in", login_path %></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
   </div>
-</header>
+  <!-- /.container -->
+</nav>

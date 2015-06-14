@@ -1,34 +1,47 @@
-<%= render 'layouts/header' %>
-<h1>Users</h1>
+<div id="wrapper">
+  <%= render 'layouts/sidebar' %>
 
-<table align="center">
-  <tr><td>User ID </td>
-    <td>Name</td>
-    <td>Profile</td>
-  </tr>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
 
-  <% @users.each do |user| %>
-      <% if @current_user == nil || session[:user_id] != user.id %>
-          <tr>
-            <td><%= user.id %></td>
-            <td><%= user.first_name << ' ' << user.last_name %></td>
-            <td><%= link_to 'View Profile', user_path(user), :class => 'btn btn-large btn-primary' %></td>
-          </tr>
-      <% end %>
-  <% end %>
+        <div class="col-lg-12">
+          <div class="btn btn-default" id="menu-toggle">Menu</div>
+        </div>
 
-</table>
+        <div class="main-content">
+          <h1>Users</h1>
 
+          <table align="center">
+            <tr><td>User ID </td>
+              <td>Name</td>
+              <td>Profile</td>
+            </tr>
 
-<div >
-<% if @current_user == nil %>
-    <%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
-<% else %>
-    <%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
-<% end %>
+            <% @users.each do |user| %>
+                <% if @current_user == nil || session[:user_id] != user.id %>
+                    <tr>
+                      <td><%= user.id %></td>
+                      <td><%= user.first_name << ' ' << user.last_name %></td>
+                      <td><%= link_to 'View Profile', user_path(user), :class => 'btn btn-large btn-primary' %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+
+          </table>
+
+          <div>
+            <% if @current_user == nil %>
+                <%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
+            <% else %>
+                <%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
+            <% end %>
+          </div>
+        </div>
+      
+
+      </div>
+    </div>
+  </div>
 
 </div>
-
-
-
-

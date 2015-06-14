@@ -1,5 +1,9 @@
-<%= render 'layouts/header' %>
-
-<h1 style = "padding-top:45px;text-align: center">New Event</h1>
-
-<%= render 'events/form' %>
+<div id="wrapper">
+	<%= render 'layouts/sidebar' %>
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
+			<h1>New Event</h1>
+			<%= render 'events/form' %>
+		</div>
+	</div>
+</div>

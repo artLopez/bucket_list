@@ -1,24 +1,31 @@
-<%= render 'layouts/header' %>
+<div id="wrapper">
+	<%= render 'layouts/sidebar' %>
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
 
-<p style = "padding-top: 50px">
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+		<p style = "padding-top: 50px">
+		  <strong>Title:</strong>
+		  <%= @event.title %>
+		</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+		<p>
+		  <strong>Location:</strong>
+		  <%= @event.location %>
+		</p>
 
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+		<p>
+		  <strong>Date:</strong>
+		  <%= @event.date %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @event.description %>
+		</p>
 
-<%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary' %>
+		<%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary' %>
+
+		</div>
+	</div>
+</div>

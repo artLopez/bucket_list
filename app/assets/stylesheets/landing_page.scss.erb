@@ -1,0 +1,163 @@
+// Place all the styles related to the landingPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* nav */
+
+.login-link{
+    color: #2ecc71;
+    -webkit-transition: color 0.5s;
+}
+
+.login-link:hover{
+    -webkit-transition: color 0.5s;
+}
+
+/* intro section */
+
+.intro-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: url(<%= asset_path 'night.jpg' %>) no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.intro-section h1{
+    margin-top: 25%;
+    color: white;
+}
+
+/* about section */
+
+.about-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: left;
+    background: #eee;
+}
+
+.about-section h1 {
+    text-align: center;
+}
+
+.about-img{
+    padding: 40px 0px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-img img{
+    width: 350px;
+    height: 350px;
+    border: 1px solid inherit;
+    border-radius: 50%;
+    z-index: 0;
+    -webkit-transition: border-radius 0.5s;
+}
+
+.about-img img:hover{
+    border-radius: 5px;
+    z-index: 1;
+    -webkit-transition: border-radius 0.5s;
+}
+
+/* services section */
+
+.services-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
+}
+
+.services-section .well{
+    margin-top: 40px;
+    height: 500px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.services-section .well .row {
+    background-color: white;
+    padding: 12px;
+    border: 1px solid grey;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+
+.services-section h3{
+    text-align: center;
+    -webkit-transition: color 0.5s;
+}
+
+.services-section h3:hover {
+    color: #3498db;
+    -webkit-transition: color 0.5s;
+}
+
+.services-section p{
+    margin: auto; 
+    text-align: left;
+}
+
+/* contact section */
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: -webkit-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #136a8a 10%, #267871 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #136a8a 10%, #267871 90%); /* W3C */
+    color: white;
+}
+
+.contact-section h1, .contact-section input{
+    color: white;
+}
+
+/* media repsonsiveness */
+
+@media screen and (max-width: 1000px){
+
+    .intro-section{
+        padding-top: 50px;
+    }
+
+    .about-section{
+        height: 200%;
+    }
+
+    .about-img img{
+        height: 200px;
+        width: 200px;
+    }
+}
