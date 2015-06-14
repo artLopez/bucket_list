@@ -35,7 +35,7 @@
           <%= f.text_area :description , class: 'form-control'%>
         </p>
 
-        <%= f.hidden_field :user_id , :value =>  @current_user.id %>
+        <%= f.hidden_field :user_id , :value =>  session[:user_id] %>
         <p>
           <%= f.submit "Submit Event", class: "btn btn-primary" %>
           <%= link_to 'Cancel', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>

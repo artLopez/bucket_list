@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user && (user[:password] === params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user
+      @current_user = user
       redirect_to user_path(session[:user_id])
     else
       # Create an error message.
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
+    @current_user = nil
     redirect_to root_url
   end
 

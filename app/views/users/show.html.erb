@@ -12,7 +12,8 @@
 			<% if @event.any? %>
 			     <%= render 'events/events' %>
 			<% elsif @event.count == 0 && @user.any?%>
-			    <h1>No events set</h1>
+					No New Events
+			    <%= link_to "Add New Event", new_event_path %>
 			<% end %>
 
 			<% if @current_user == nil && @user.count != 0 %>
