@@ -1,45 +1,43 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%=  form_for @event  do |f|%>
-
-        <% if @event.errors.any? %>
-            <div id="error_explanation">
-              <h3>
-                <%= pluralize(@event.errors.count, "error") %> prohibited
-                this event from being saved:
-              </h3>
-              <ul>
-                <% @event.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
+<%=  form_for @event  do |f|%>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <p>Woah there...</p>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+        <li><b><%= msg %></b></li>
         <% end %>
-
-        <p>
-          <%= f.label :title %><br>
-          <%= f.text_field :title, class: 'form-control' %>
-        </p>
-        <p>
-          <%= f.label :location %>
-          <%= f.text_field :location, class: 'form-control' %>
-        </p>
-
-        <p>
-          <%= f.label :date %>
-          <%= f.date_select :date, class: 'form-control' %>
-        </p>
-
-        <p>
-          <%= f.label :description %><br>
-          <%= f.text_area :description , class: 'form-control'%>
-        </p>
-
-        <%= f.hidden_field :user_id , :value =>  session[:user_id] %>
-        <p>
-          <%= f.submit "Submit Event", class: "btn btn-primary" %>
-          <%= link_to 'Cancel', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
-        </p>
-    <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :title, "Title",  class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
   </div>
-</div>
+  <div class="form-group">
+    <%= f.label :location, "Location",  class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :location, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, "Date",  class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.date_select :date, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Description",  class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id , :value =>  session[:user_id] %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Submit Event", class: "btn btn-primary" %>
+      <%= link_to 'Cancel', user_path(session[:user_id]), :class => 'btn btn-large btn-warning'%>
+    </div>
+  </div>
+<% end %>

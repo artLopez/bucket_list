@@ -1,30 +1,43 @@
 <div id="wrapper">
-	<%= render 'layouts/sidebar' %>
-	<div id="page-content-wrapper">
-		<div class="container-fluid">
+  <%= render 'layouts/sidebar' %>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="btn btn-default" id="menu-toggle">Menu</div>
+        </div>
+        <div class="main-content">
+          <div class="col-md-3 profile-outer">
+            <%= image_tag 'profile.jpg', class: 'profile' %>
+            <p class="name">Chanel Preston</p>
+            <p class="name">13 Events</p>
+            <p class="name">24 Followers</p>
+            </div>
+          </div>
+          <div class="col-md-7 event-list">
+            <% if @user != nil && session[:user_id] == @user[0][:id] %>
+						    <h2>Welcome to your Profile <%= session[:name] %>!</h2>
+						<% else %>
+						    <h2>Profile <%= @user[0][:first_name] << ' ' << @user[0][:last_name] %></h2>
+						<% end %>
 
-			<% if @user != nil && session[:user_id] == @user[0][:id] %>
-			    <h1 style = "padding-top: 50px">Welcome to your Profile <%= session[:name] %>!</h1>
-			<% else %>
-			    <h1>Profile <%= @user[0][:first_name] << ' ' << @user[0][:last_name] %></h1>
-			<% end %>
+						<% if @event.any? %>
+						     <%= render 'events/events' %>
+						<% elsif @event.count == 0 && @user.any?%>
+								<p>No New Events</p>
+						    <%= link_to "Add New Event", new_event_path %>
+						<% end %>
 
-			<% if @event.any? %>
-			     <%= render 'events/events' %>
-			<% elsif @event.count == 0 && @user.any?%>
-					No New Events
-			    <%= link_to "Add New Event", new_event_path %>
-			<% end %>
-
-			<% if @current_user == nil && @user.count != 0 %>
-			    <%= link_to 'Back', users_path, :class => 'btn btn-large btn-primary'%>
-			    <% elsif @current_user != nil && session[:user_id] != @user[0][:id] %>
-			     <%= link_to 'Back', users_path, :class => 'btn btn-large btn-primary'%>
-			<% end %>
-
-		</div>
-	</div>
+          <div>
+            <!--<% if @current_user == nil %>
+              <%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
+            <% else %>
+              <%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
+            <% end %>-->
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </div>
-
-
-

@@ -2,30 +2,35 @@
 	<%= render 'layouts/sidebar' %>
 	<div id="page-content-wrapper">
 		<div class="container-fluid">
-
-		<p style = "padding-top: 50px">
-		  <strong>Title:</strong>
-		  <%= @event.title %>
-		</p>
-
-		<p>
-		  <strong>Location:</strong>
-		  <%= @event.location %>
-		</p>
-
-
-		<p>
-		  <strong>Date:</strong>
-		  <%= @event.date %>
-		</p>
-
-		<p>
-		  <strong>Description:</strong>
-		  <%= @event.description %>
-		</p>
-
-		<%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary' %>
-
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="btn btn-default" id="menu-toggle">Menu</div>
+				</div>
+				<div class="main-content">
+					<div class="col-md-3 profile-outer">
+						<%= image_tag 'profile.jpg', class: 'profile' %>
+						<p class="name">Chanel Preston</p>
+						<p class="name">13 Events</p>
+						<p class="name">24 Followers</p>
+					</div>
+				</div>
+				<div class="col-md-7 event-list">
+					
+					<h2><%= @event.title %></h4>
+					<h4><%= @event.location %></h4>
+					<h4><%= @event.date %></h4>
+					<p><%= @event.description %></p>
+					<%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary' %>
+					<div>
+						<!--<% if @current_user == nil %>
+						<%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
+						<% else %>
+						<%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
+						<% end %>-->
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 </div>

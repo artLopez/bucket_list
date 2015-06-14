@@ -12,29 +12,23 @@
             <p class="name">Chanel Preston</p>
             <p class="name">13 Events</p>
             <p class="name">24 Followers</p>
-            </div>
           </div>
-          <div class="col-md-7 event-list">
-            <h2>My Friends</h2>
-            <hr>
-            <% @users.each do |user| %>
-              <% if @current_user == nil || session[:user_id] != user.id %>
-                <h4><%= user.first_name << ' ' << user.last_name %></h4>
-                <p><%= link_to 'View Profile', user_path(user), :class => 'btn btn-large btn-primary' %></p>
-              <% end %>
+        </div>
+        <div class="col-md-7 event-list">
+          <h2>My Friends</h2>
+          <hr>
+          <% @users.each do |user| %>
+            <% if @current_user == nil || session[:user_id] != user.id %>
+              <h4><%= user.first_name << ' ' << user.last_name %></h4>
+              <p>
+                <%= link_to 'View Profile', user_path(user), 
+                    :class => 'btn btn-large btn-primary' %>
+              </p>
             <% end %>
-
-          <div>
-            <!--<% if @current_user == nil %>
-              <%= link_to 'Back', root_path, :class => 'btn btn-large btn-primary'%>
-            <% else %>
-              <%= link_to 'Back', user_path(session[:user_id]), :class => 'btn btn-large btn-primary'%>
-            <% end %>-->
-          </div>
+          <% end %>
         </div>
       </div>
       
     </div>
   </div>
-</div>
 </div>
