@@ -1,0 +1,96 @@
+// Place all the styles related to the landingPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+    --Structure
+*/
+
+#page-content-wrapper{
+    padding: 0px 0px 0px 0px;
+}
+
+.section-content{
+    font-family: 'Fjalla One', sans-serif;
+    height: 700px;
+ 
+    
+}
+
+/*
+    --Content
+*/
+
+    /* 
+        --landing-intro
+    */
+    #menu-toggle{
+        margin-top: 40px;
+        margin-left: 40px;
+        font-size: 40px;
+        background-color: transparent;
+        border-color: transparent;
+        position: relative;
+
+    }
+
+    #menu-toggle.a {
+        font-size: 40px;
+    }
+
+    .section-content.module.parallax {
+        height: 600px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .section-content.module.parallax h1 {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #landing-intro{
+        background: url(<%= asset_path '149H.jpg' %>);
+        background-size: cover;
+        height: 700px;
+        position: relative;
+        z-index: 3;
+    }
+
+   .landing-statement{
+        margin-top: 100px;
+
+    }
+
+
+    /*
+        --Landing Content
+    */
+
+    #landing-content{
+        background-color: #ECF0F1;
+        padding: 109.89px 20px 0px 20px;
+        margin: 0px;
+    }
+
+    .content-service{
+        padding: 0px 0px 50px 0px;
+    }
+
+    .content-service-p p{
+        font-family: 'Average Sans', sans-serif;
+    }
+
+    .arrow{
+        margin: 374.141px 0px 0px 0px;
+    }
+
+    .arrow a{
+        text-decoration: none;
+        color: #000;
+        border-color: transparent;
+    }
